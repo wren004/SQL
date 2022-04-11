@@ -1,0 +1,22 @@
+CREATE TABLE store_inventory(id INTEGER PRIMARY KEY, item TEXT, quantity INTEGER, cost REAL, price REAL);
+
+INSERT INTO store_inventory VALUES(1, "Tuscan Herb EVOO", 28, 6.00, 9.00);
+INSERT INTO store_inventory VALUES(2, "Garlic EVOO", 20, 4.60, 9.00);
+INSERT INTO store_inventory VALUES(3, "Blood Orange EVOO", 13, 5.00, 9.00);
+INSERT INTO store_inventory VALUES(4, "Truffle Oil", 3, 18.00, 25.00);
+INSERT INTO store_inventory VALUES(5, "Sesame Oil", 4, 15.50, 22.00);
+INSERT INTO store_inventory VALUES(6, "Basil EVOO", 12, 5.00, 9.00);
+INSERT INTO store_inventory VALUES(7, "18 Year Aged Balsamic", 24, 12.00, 25.00);
+INSERT INTO store_inventory VALUES(8, "12 Year Aged Balsamic", 12, 6.00, 9.00);
+INSERT INTO store_inventory VALUES(9, "Bloody Mary Mix", 4, 3.30, 6.00);
+INSERT INTO store_inventory VALUES(10, "SM Bloody Mary Mix", 4, 1.20, 3.00);
+INSERT INTO store_inventory VALUES(11, "Mango White Balsamic", 8, 6.00, 9.00);
+INSERT INTO store_inventory VALUES(12, "Sea Salt", 5, 2.50, 8.00);
+INSERT INTO store_inventory VALUES(13, "Wooden Spoon Set", 3, 20.00, 30.00);
+INSERT INTO store_inventory VALUES(14, "Traditional EVOO Large", 2, 25.00, 40.00);
+INSERT INTO store_inventory VALUES(15, "Pasta Sauce", 8, 2.40, 5.00);
+
+SELECT * From store_inventory;
+SELECT sum(cost) FROM store_inventory;
+SELECT sum(price) FROM store_inventory;
+SELECT item, quantity FROM store_inventory ORDER BY quantity;
