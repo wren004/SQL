@@ -1,0 +1,62 @@
+/* Create table about the people and what they do here */
+
+CREATE TABLE authors (
+    id INTEGER,
+    name TEXT);
+    INSERT INTO authors (id, name) VALUES (1, "Megan Miranda"), (2, "Laurie Forest"), (3, "Colleen Hoover"), (4, "Tracy Wolff"), (5, "Naomi Novik"), (6, "Molly McAdams"), (7, "Emily St. John Mandel"), (8, "Kerri Maniscalco"), (9, "Lucy Foley");
+    
+ 
+    
+CREATE TABLE books (
+    author_id INTEGER,
+    title TEXT,
+    genre TEXT,
+    rating INTEGER);
+    
+    INSERT INTO books (author_id, title, genre, rating) VALUES (1, "All the Missing Girls", "thriller", 5);
+    INSERT INTO books (author_id, title, genre, rating) VALUES(1, "The Last House Guest", "thriller", 5);
+    INSERT INTO books (author_id, title, genre, rating) VALUES(1, "The Perfect Stranger", "thriller", 5);
+    INSERT INTO books (author_id, title, genre, rating) VALUES(1, "Such a Quiet Place", "thriller", 4);
+    INSERT INTO books (author_id, title, genre, rating) VALUES(1, "The Girl from Widow Hills", "thriller", 5);
+    INSERT INTO books (author_id, title, genre, rating) VALUES(2, "The Black Witch", "fantasy", 4);
+    INSERT INTO books (author_id, title, genre, rating) VALUES(2, "The Iron Flower", "fantasy", 4);
+    INSERT INTO books (author_id, title, genre, rating) VALUES(2, "The Shadow Wand", "fantasy", 5);
+   INSERT INTO books (author_id, title, genre, rating) VALUES(2, "The Demon Tide", "fantasy", 5);
+    INSERT INTO books (author_id, title, genre, rating) VALUES(3, "Verity", "thriller", 4);
+    INSERT INTO books (author_id, title, genre, rating) VALUES(3, "It Ends With Us", "mystery", 4);
+    INSERT INTO books (author_id, title, genre, rating) VALUES(4, "Crave", "fantasy", 5);
+    INSERT INTO books (author_id, title, genre, rating) VALUES(4, "Crush", "fantasy", 5);
+    INSERT INTO books (author_id, title, genre, rating) VALUES(4, "Covet", "fantasy", 5);
+    INSERT INTO books (author_id, title, genre, rating) VALUES(4, "Court", "fantasy", 5);
+    INSERT INTO books (author_id, title, genre, rating) VALUES(4, "Back in the Burbs", "romance", 4);
+    INSERT INTO books (author_id, title, genre, rating) VALUES(5, "Deadly Education", "fantasy", 5);
+    INSERT INTO books (author_id, title, genre, rating) VALUES(5, "The Last Graduate", "fantasy", 5);
+    INSERT INTO books (author_id, title, genre, rating) VALUES(5, "Spinning Silver", "fantasy", 3);
+    INSERT INTO books (author_id, title, genre, rating) VALUES(6, "Lie to Me", "mystery", 4);
+    INSERT INTO books (author_id, title, genre, rating) VALUES(7, "Station Eleven", "sci-fi", 5);
+    INSERT INTO books (author_id, title, genre, rating) VALUES(7, "The Glass Hotel", "mystery", 2);
+    INSERT INTO books (author_id, title, genre, rating) VALUES(8, "Kingdom of the Wicked", "fantasy", 5);
+    INSERT INTO books (author_id, title, genre, rating) VALUES(8, "Kingdom of the Cursed", "fantasy", 4);
+    INSERT INTO books (author_id, title, genre, rating) VALUES(9, "The Hunting Party", "thriller", 5);
+    INSERT INTO books (author_id, title, genre, rating) VALUES(9, "The Guest List", "mystery", 4);
+
+
+SELECT * FROM authors;
+SELECT * FROM books;
+
+SELECT authors.name, books.title, books.genre, books.rating
+    FROM authors
+    JOIN books
+    ON books.author_id = authors.id
+    ORDER BY authors.id;
+    
+SELECT authors.name, count(*) as total_books
+    FROM books
+    JOIN authors
+    ON books.author_id = authors.id
+    GROUP BY books.author_id;
+    
+
+SELECT genre, count(*) as number_of_books
+    FROM books
+    GROUP BY genre;
